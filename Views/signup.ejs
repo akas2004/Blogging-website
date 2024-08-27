@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head.ejs") %>
+    <style>
+      body {
+        background: linear-gradient(120deg, #790cff 0%, #4e0de4 100%);
+        font-family: "Arial", sans-serif;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+       
+        color: #343a40;
+      }
+      
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+  
+      h1 {
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: #790cff;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+  
+      .form-label {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+  
+      .form-control {
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+        padding: 10px;
+        width: 100%;
+      }
+  
+      .btn-primary {
+        background-color: #790cff;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+      }
+  
+      .btn-primary:hover {
+        background-color: #4e0de4;
+      }
+    </style>
+  
+   
+    <title>signup</title>
+  </head>
+  <body>
+    <%- include("./partials/nav.ejs") %>
+    <div class="container">
+        <form action="/user/signup" method="post">
+            <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input name="fullName" type="text" class="form-control" id="fullName" aria-describedby="fullName">
+              </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+    <%- include("./partials/script.ejs") %>
+  </body>
+</html>
